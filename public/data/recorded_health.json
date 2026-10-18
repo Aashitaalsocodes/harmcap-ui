@@ -1,0 +1,14 @@
+{
+  "health": {
+    "status": "healthy",
+    "uptime_seconds": 86421,
+    "version": "0.1.0",
+    "platform": "linux-s390x"
+  },
+  "policy": {
+    "model_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "threshold": 0.99506049103294,
+    "cap": 5,
+    "audit_public_key_fingerprint": "SHA256:xK9mPqR2vL5nW8jT3hB6dY1fC4gA7sE0uI"
+  }
+}

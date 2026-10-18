@@ -1,0 +1,80 @@
+{
+  "tests": [
+    {
+      "id": 0,
+      "name": "Untouched log verifies clean",
+      "result": "PASS",
+      "detail": "No problems",
+      "description": "A freshly generated log is verified end-to-end. Every hash matches, every signature checks, and the sequence is contiguous.",
+      "affected_record": null,
+      "problem_count": 0
+    },
+    {
+      "id": "0b",
+      "name": "Replay a record",
+      "result": "PASS",
+      "detail": "decision=release",
+      "description": "Record 100 is replayed from the audit log. The stored inputs reproduce the same decision, confirming deterministic scoring.",
+      "affected_record": 100,
+      "problem_count": 0
+    },
+    {
+      "id": 1,
+      "name": "Edit a field",
+      "result": "PASS",
+      "detail": "1 problem(s): record 100: content altered (hash mismatch)",
+      "description": "A single field in record 100 is changed. The record's own hash no longer matches its content.",
+      "affected_record": 100,
+      "problem_count": 1
+    },
+    {
+      "id": "1b",
+      "name": "Edit and recompute its hash",
+      "result": "PASS",
+      "detail": "2 problem(s): record 101: chain broken (prev_hash mismatch)",
+      "description": "Record 100 is edited and its hash recomputed. The hash now matches its (altered) content, but record 101's prev_hash no longer matches record 100's new hash, breaking the chain.",
+      "affected_record": 101,
+      "problem_count": 2
+    },
+    {
+      "id": 2,
+      "name": "Delete a record",
+      "result": "PASS",
+      "detail": "135 problem(s): record 100: sequence is 101 (gap, reorder or deletion)",
+      "description": "Record 100 is removed. Every subsequent record has a sequence number one higher than expected, producing 135 problems from record 100 onward.",
+      "affected_record": 100,
+      "problem_count": 135
+    },
+    {
+      "id": 3,
+      "name": "Reorder records",
+      "result": "PASS",
+      "detail": "6 problem(s): record 100: sequence is 101 (gap, reorder or deletion)",
+      "description": "A block of records is swapped. The sequence numbers no longer increase monotonically, and the hash chain is broken at every swap boundary.",
+      "affected_record": 100,
+      "problem_count": 6
+    },
+    {
+      "id": 4,
+      "name": "Truncate the tail",
+      "result": "PASS",
+      "detail": "1 problem(s): checkpoint 230: log ends at 220 (tail truncated)",
+      "description": "Records after position 220 are deleted. The last signed checkpoint at record 230 refers to records that no longer exist, revealing the truncation.",
+      "affected_record": 220,
+      "problem_count": 1
+    },
+    {
+      "id": 5,
+      "name": "Swap the model file",
+      "result": "PASS",
+      "detail": "230 problem(s): record 1: model file does not match logged model hash",
+      "description": "The model binary is replaced with a different file. Every record's logged model hash disagrees with the current model's hash, flagging all 230 records.",
+      "affected_record": 1,
+      "problem_count": 230
+    }
+  ],
+  "metadata": {
+    "source": "test_tamper.py",
+    "note": "Recorded results from freshly generated logs with throwaway keys and a dummy model file. This is not a live check of the demo log."
+  }
+}

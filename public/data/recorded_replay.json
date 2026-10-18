@@ -1,0 +1,42 @@
+[
+  {
+    "txn_id": "W4088376",
+    "decision": "release",
+    "score": 0.0021,
+    "tier": "low",
+    "case_id": null,
+    "ts": "2022-09-08T17:31:00"
+  },
+  {
+    "txn_id": "W4095557",
+    "decision": "release",
+    "score": 0.0034,
+    "tier": "low",
+    "case_id": null,
+    "ts": "2022-09-08T17:53:00"
+  },
+  {
+    "txn_id": "W4096594",
+    "decision": "release",
+    "score": 0.0018,
+    "tier": "low",
+    "case_id": null,
+    "ts": "2022-09-08T17:56:00"
+  },
+  {
+    "txn_id": "W4250809",
+    "decision": "release",
+    "score": 0.4120,
+    "tier": "medium",
+    "case_id": null,
+    "ts": "2022-09-09T00:49:00"
+  },
+  {
+    "txn_id": "HOLD4250810",
+    "decision": "hold",
+    "score": 0.9982,
+    "tier": "critical",
+    "case_id": "CASE-4250810-20220909",
+    "ts": "2022-09-09T00:49:00"
+  }
+]

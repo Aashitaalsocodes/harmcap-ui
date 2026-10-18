@@ -1,0 +1,10 @@
+{
+  "records": [
+    { "seq": 0, "decision": "release", "hash": "a3f1c9e2d4b5", "prev_hash": "0000000000", "txn_id": "W4088376", "score": 0.0021, "tier": "low", "ts": "2022-09-08T17:31:00" },
+    { "seq": 1, "decision": "release", "hash": "b7d2e8f1a3c4", "prev_hash": "a3f1c9e2d4b5", "txn_id": "W4095557", "score": 0.0034, "tier": "low", "ts": "2022-09-08T17:53:00" },
+    { "seq": 2, "decision": "release", "hash": "c4e9d1b3f2a7", "prev_hash": "b7d2e8f1a3c4", "txn_id": "W4096594", "score": 0.0018, "tier": "low", "ts": "2022-09-08T17:56:00" },
+    { "seq": 3, "decision": "release", "hash": "d8a2c5e7f1b9", "prev_hash": "c4e9d1b3f2a7", "txn_id": "W4250809", "score": 0.4120, "tier": "medium", "ts": "2022-09-09T00:49:00" },
+    { "seq": 4, "decision": "hold", "hash": "e1f3b7d9c2a4", "prev_hash": "d8a2c5e7f1b9", "txn_id": "HOLD4250810", "score": 0.9982, "tier": "critical", "case_id": "CASE-4250810-20220909", "ts": "2022-09-09T00:49:00" }
+  ],
+  "public_key_fingerprint": "SHA256:xK9mPqR2vL5nW8jT3hB6dY1fC4gA7sE0uI"
+}
